@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* ✅ Neon Glow Utilities */
+@layer utilities {
+  .neon-cyan {
+    color: #22d3ee;
+    background: radial-gradient(circle, #22d3ee 0%, transparent 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #22d3ee;
+  }
+
+  .neon-green {
+    color: #4ade80;
+    background: radial-gradient(circle, #4ade80 0%, transparent 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #4ade80;
+  }
+
+  .neon-red {
+    color: #f87171;
+    background: radial-gradient(circle, #f87171 0%, transparent 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #f87171;
+  }
+
+  .neon-blue {
+    color: #60a5fa;
+    background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #60a5fa;
+  }
+}
+
+
+@layer components {
+  .card-small {
+    @apply min-h-[140px] max-w-[280px] p-2;
+  }
+
+  .card-medium {
+    @apply min-h-[180px] max-w-sm p-3;
+  }
+
+  .card-large {
+    @apply min-h-[240px] max-w-md p-4;
+  }
+}
+
