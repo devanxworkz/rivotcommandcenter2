@@ -216,3 +216,29 @@ body {
   width: 10px;
   height: 10px;
 }
+
+.rider-curet{
+  display: flex;
+  flex-direction: row;
+  width: 25px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* makes icon white */
+  cursor: pointer;
+}
+
+/* Make the calendar/time picker icon white */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);   /* inverts black → white */
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+  
+}
+
+
+
