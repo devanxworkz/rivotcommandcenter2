@@ -1,8 +1,23 @@
+
+
+
+
+
 Space control room backdrop
 .bg-space {
   background: radial-gradient(circle at 20% -10%, #1B263B, transparent 40%),
               radial-gradient(circle at 80% -10%, #0EA5E9, transparent 30%),
               linear-gradient(180deg, #0D1B2A 0%, #0A1524 100%);
+}
+.bg-color-container{
+  background: radial-gradient(
+  circle at center,
+  rgba(255, 153, 19, 0.9) 0%,     /* bright orange core */
+  rgba(255, 153, 19, 0.6) 20%,    /* soft orange glow */
+  rgba(30, 30, 30, 0.9) 60%,      /* dark neutral fade */
+  rgba(10, 10, 10, 1) 100%        /* deep black outer */
+);
+
 }
 
 /* Glass surfaces */
@@ -240,5 +255,164 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
   
 }
 
+/* .bg-full-color { 
+  min-height: 100vh;
+background-image:url radial-gradient(circle at top left, #0d0d0d, #1C0A00 70%);
+  color: white;
+} */
+
+.speed-margin{
+  margin-left:80px ;
+}
+
+.vhical{
+  height: 300px;
+  width: 450px;
+  text-align: center;
+}
+.card-speed {
+  flex: 1 1 350px; /* base width 350px, grows if space available */
+  min-width: 350px; /* optional, ensures it doesn’t shrink too much */
+  /* remove max-width or set it high */
+  max-width: 100%; /* allows full stretch inside container */
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Grid layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 columns on desktop */
+  gap: 20px;
+}
+
+/* Default card style */
+.card {
+  background: linear-gradient(135deg, #141627, #1c2240, #0d0f24);
+  color: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Individual card sizes */
+.card-component {
+  grid-column: span 2; /* Takes 2 columns wide */
+  height: 350px;
+  overflow-y: auto;
+}
+
+.card-tire {
+  grid-column: span 1;
+  height: 250px;
+  text-align: center;
+}
+
+.card-soc {
+  grid-column: span 3; /* Full width row */
+  height: 400px;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Stat chips */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-chip {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.status.unlocked {
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  color: #22c55e;
+}
+
+.status.locked {
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  color: #ef4444;
+}
+
+.rider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Gauge placeholder */
+.gauge {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 6px solid #ff9800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* SOC section */
+.soc-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.soc-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-box h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+
+.soc-gauge .gauge {
+  width: 150px;
+  height: 150px;
+  border: 6px solid #00c3ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Stacks cards */
+  }
+  .card-component,
+  .card-soc {
+    grid-column: span 1;
+  }
+}

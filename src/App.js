@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import RealTimeChart from './Components/RealTimeChart';
 import Login from './Components/Login';
+import JourneyReplay from './JourneyReplay';
 
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
@@ -26,6 +26,10 @@ function App() {
         <Route 
           path="/dashboard" 
           element={isLoggedIn ? <RealTimeChart /> : <Navigate to="/" />} 
+        />
+        <Route 
+          path="/replay" 
+          element={isLoggedIn ? <JourneyReplay /> : <Navigate to="/" />} 
         />
       </Routes>
     </Router>

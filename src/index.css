@@ -2,38 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap'); */
 
 
-/* ✅ Neon Glow Utilities */
-@layer utilities {
-  .neon-cyan {
-    color: #22d3ee;
-    background: radial-gradient(circle, #22d3ee 0%, transparent 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #22d3ee;
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
   }
-
-  .neon-green {
-    color: #4ade80;
-    background: radial-gradient(circle, #4ade80 0%, transparent 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #4ade80;
-  }
-
-  .neon-red {
-    color: #f87171;
-    background: radial-gradient(circle, #f87171 0%, transparent 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #f87171;
-  }
-
-  .neon-blue {
-    color: #60a5fa;
-    background: radial-gradient(circle, #60a5fa 0%, transparent 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #60a5fa;
+  to {
+    transform: translateX(0);
   }
 }
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
+}
+.animate-slideOut {
+  animation: slideOut 0.4s ease-in forwards;
+}
+
+
 
 
 @layer components {
@@ -50,3 +46,19 @@
   }
 }
 
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}

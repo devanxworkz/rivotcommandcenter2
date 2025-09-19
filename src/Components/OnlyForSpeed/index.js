@@ -41,9 +41,9 @@ const OnlyForSpeed = ({
       <svg width={200} height={200} viewBox={`0 0 ${width} ${width}`}>
         <defs>
           <linearGradient id="g-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00F0FF" />
-            <stop offset="60%" stopColor="#00ffeaff" />
-            <stop offset="100%" stopColor="#00D0FF" />
+            <stop offset="0%" stopColor="#F57A0D" />
+            <stop offset="60%" stopColor="#F57A0D" />
+            <stop offset="100%" stopColor="#F57A0D" />
           </linearGradient>
           <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="4" result="blur" />
@@ -57,7 +57,7 @@ const OnlyForSpeed = ({
         {/* Outer thin glow */}
         <path
           d={arcPath(cx, cy, outerR, startAngle, endAngle)}
-          stroke="rgba(24, 216, 229, 0.9)"
+          stroke="#ea8016ff"
           strokeWidth="3"
           strokeLinecap="round"
           fill="none"
@@ -68,7 +68,7 @@ const OnlyForSpeed = ({
         {/* Track */}
         <path
           d={arcPath(cx, cy, trackR, startAngle, endAngle)}
-          stroke="#e4e8ebff"
+          stroke="#f5790d05"
           strokeWidth="18"
           strokeLinecap="round"
           fill="none"
@@ -78,11 +78,11 @@ const OnlyForSpeed = ({
         {/* Progress */}
         <path
           d={arcPath(cx, cy, progressR, startAngle, progEnd)}
-          stroke="url(#g-cyan)"
+          stroke="#F57A0D"
           strokeWidth="18"
           strokeLinecap="round"
           fill="none"
-          style={{ filter: "drop-shadow(0 0 6px rgba(0, 240, 255, 0.6))" }}
+          style={{ filter: "drop-shadow(0 0 6px #F57A0D" }}
         />
 
         Inner circle

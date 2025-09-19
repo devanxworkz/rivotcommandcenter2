@@ -32,9 +32,9 @@ const OnlyForsoc = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
     <svg width={200} height={200} viewBox={`0 0 ${width} ${width}`}>
       <defs>
         <linearGradient id="g-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#00F0FF" />
-          <stop offset="60%" stopColor="#2AF6E6" />
-          <stop offset="100%" stopColor="#00D0FF" />
+          <stop offset="0%" stopColor="#f48106ff" />
+          <stop offset="60%" stopColor="#f48106ff" />
+          <stop offset="100%" stopColor="#f48106ff" />
           
         </linearGradient>
         <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
@@ -60,7 +60,7 @@ const OnlyForsoc = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
       {/* Track */}
       <path
         d={arcPath(cx, cy, trackR, START, END)}
-        stroke="#0E2230"
+        stroke="#f48106ff"
         strokeWidth="18"
         strokeLinecap="round"
         fill="none"
@@ -70,11 +70,11 @@ const OnlyForsoc = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
       {/* Progress */}
       <path
         d={arcPath(cx, cy, progressR, START, progEnd)}
-        stroke="url(#g-cyan)"
+        stroke="#f48106ff"
         strokeWidth="18"
         strokeLinecap="round"
         fill="none"
-        style={{ filter: "drop-shadow(0 0 6px rgba(37, 222, 210, 0.6))" }}
+        style={{ filter: "drop-shadow(0 0 6px #f48106ff)" }}
       />
 
       {/* Inner circle

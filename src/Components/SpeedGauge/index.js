@@ -32,9 +32,9 @@ const SpeedGauge = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
     <svg width={200} height={200} viewBox={`0 0 ${width} ${width}`}>
       <defs>
         <linearGradient id="g-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#00F0FF" />
-          <stop offset="60%" stopColor="#2AF6E6" />
-          <stop offset="100%" stopColor="#00D0FF" />
+          <stop offset="0%" stopColor="#F57A0D" />
+          <stop offset="60%" stopColor="#F57A0D" />
+          <stop offset="100%" stopColor="#F57A0D" />
         </linearGradient>
         <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="4" result="blur" />
@@ -48,7 +48,7 @@ const SpeedGauge = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
       {/* Outer thin glow */}
       <path
         d={arcPath(cx, cy, outerR, START, END)}
-        stroke="rgba(0, 240, 255, 0.9)"
+        stroke="#F57A0D"
         strokeWidth="3"
         strokeLinecap="round"
         fill="none"
@@ -59,7 +59,7 @@ const SpeedGauge = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
       {/* Track */}
       <path
         d={arcPath(cx, cy, trackR, START, END)}
-        stroke="#0E2230"
+        stroke="#F57A0D"
         strokeWidth="18"
         strokeLinecap="round"
         fill="none"
@@ -67,14 +67,37 @@ const SpeedGauge = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
       />
 
       {/* Progress */}
-      <path
-        d={arcPath(cx, cy, progressR, START, progEnd)}
-        stroke="url(#g-cyan)"
-        strokeWidth="18"
-        strokeLinecap="round"
-        fill="none"
-        style={{ filter: "drop-shadow(0 0 6px rgba(0, 240, 255, 0.6))" }}
-      />
+    {/* Progress */}
+{pct < 1 ? (
+  <path
+    d={arcPath(cx, cy, progressR, START, progEnd)}
+    stroke="#F57A0D"
+    strokeWidth="18"
+    strokeLinecap="round"
+    fill="none"
+    style={{ filter: "drop-shadow(0 0 6px rgba(242, 125, 9, 1))" }}
+  />
+) : (
+  <>
+    <path
+      d={arcPath(cx, cy, progressR, 0, 180)}
+      stroke="#F57A0D"
+      strokeWidth="18"
+      strokeLinecap="round"
+      fill="none"
+      style={{ filter: "drop-shadow(0 0 6px rgba(242, 125, 9, 1))" }}
+    />
+    <path
+      d={arcPath(cx, cy, progressR, 180, 360)}
+      stroke="#F57A0D"
+      strokeWidth="18"
+      strokeLinecap="round"
+      fill="none"
+      style={{ filter: "drop-shadow(0 0 6px rgba(242, 125, 9, 1))" }}
+    />
+  </>
+)}
+
 
       {/* Inner circle
       <circle cx={cx} cy={cy} r={60} fill="#0B1622" />
@@ -94,7 +117,7 @@ const SpeedGauge = ({ value = 0, max = 200, width = 260, unit = "", label = "" }
 
       {/* Unit */}
       <text
-        x={cx + 25}
+        x={cx + 35}
         y={cy - (-15)}
         fontSize="18"
         fill="#A9B6C4"

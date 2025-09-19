@@ -49,7 +49,7 @@ const ThreeQuarterGauge = ({
   const currentAngle = toAngle(clamp(value));
 
   // Colors
-  const colors = ["#22d3ee", "#ffeb3b", "#ff4d4d"];
+  const colors = ["#FF9913", "#ffeb3b", "#ff4d4d"];
 
   return (
     <div>
@@ -63,13 +63,15 @@ const ThreeQuarterGauge = ({
         />
 
         {/* Track */}
-        <path
-          d={arcPath(cx, cy, r, START, END)}
-          stroke="#0f172a"
-          strokeWidth="14"
-          strokeLinecap="round"
-          fill="none"
-        />
+       {/* Track */}
+<path
+  d={arcPath(cx, cy, r, START, END)}
+  stroke="#292626ff"
+  strokeWidth="14"
+  strokeLinecap="round"
+  fill="none"
+/>
+
 
         {/* Progress segments */}
         {/* Zone 1: min to zone1 */}
@@ -145,10 +147,10 @@ const ThreeQuarterGauge = ({
             y1={cy}
             x2={cx}
             y2={cy - r}
-            stroke="#ff4d4d"
+            stroke="#f83d3dff"
             strokeWidth="3"
           />
-          <circle cx={cx} cy={cy} r="5" fill="#ff4d4d" />
+          <circle cx={cx} cy={cy} r="5" fill="#f53b3bff" />
         </g>
       </svg>
 
